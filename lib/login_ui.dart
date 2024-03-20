@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:zoom_clone/widgets/custom_button.dart';
 
 class LoginUI extends StatefulWidget {
   const LoginUI({super.key});
@@ -11,27 +13,18 @@ class _LoginUIState extends State<LoginUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.black,title: const Text("Login Page", style: TextStyle(color: Colors.white),),),
-      body: const Column(
+      body:  Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 50,
-          ),
+          const Text("Start or join a Meeting", style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold, color: Colors.white),),
           Padding(
-            padding: EdgeInsets.all(30.0),
-            child: TextField(cursorRadius: Radius.circular(10),
-            style: TextStyle(color: Colors.white),
-            ),
-          ),SizedBox(
-            height:1,
+            padding: const EdgeInsets.symmetric(vertical:38.0),
+            child: Image.asset('assets/images/onboarding.jpg'),
           ),
-          Padding(
-            padding: EdgeInsets.all(30.0),
-            child: TextField(cursorRadius: Radius.circular(10),),
-          )
+          const CustomButton(text: 'Login')
         ],
       ),
       
     );
   }
-}
+} 

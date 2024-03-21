@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zoom_clone/utils/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -6,6 +7,9 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: () {}, child: Text(text),);
+    return ElevatedButton(onPressed: () {},
+    style: ElevatedButton.styleFrom(
+      backgroundColor: buttonColor,
+    ), child: Text(text, style: const TextStyle(color: Colors.white),));
   }
 }

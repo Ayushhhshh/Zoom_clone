@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:zoom_clone/resources/auth_methods.dart';
 import 'package:zoom_clone/widgets/custom_button.dart';
 
 class LoginUI extends StatefulWidget {
@@ -10,6 +12,7 @@ class LoginUI extends StatefulWidget {
 }
 
 class _LoginUIState extends State<LoginUI> {
+  final AuthMethods _authMethods = AuthMethods();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +24,12 @@ class _LoginUIState extends State<LoginUI> {
             padding: const EdgeInsets.symmetric(vertical:38.0),
             child: Image.asset('assets/images/onboarding.jpg'),
           ),
-          CustomButton(text: 'Google Sign In', onPressed:() {} ,)
+          CustomButton(text: 'Google Sign In', onPressed:() async {
+             bool res = await _authMethods.signInWithGoogle(context);
+             if (res){
+               Navigator.of(context).pushNamed('/home');
+             }
+          } ,)
         ],
       ),
       

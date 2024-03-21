@@ -21,7 +21,7 @@ class _LoginUIState extends State<LoginUI> {
             padding: const EdgeInsets.symmetric(vertical:38.0),
             child: Image.asset('assets/images/onboarding.jpg'),
           ),
-          CustomButton(text: 'Login', onPressed:() {} ,)
+          CustomButton(text: 'Google Sign In', onPressed:() {} ,)
         ],
       ),
       

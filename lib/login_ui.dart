@@ -24,15 +24,15 @@ class _LoginUIState extends State<LoginUI> {
             padding: const EdgeInsets.symmetric(vertical:38.0),
             child: Image.asset('assets/images/onboarding.jpg'),
           ),
-          CustomButton(text: 'Google Sign In', onPressed:() async {
+          CustomButton(text: 'Google Sign In', onPressed: () async {
              bool res = await _authMethods.signInWithGoogle(context);
              if (res){
-               Navigator.of(context).pushNamed('/home');
+               Navigator.pushNamed(context, '/home');
              }
-          } ,)
+          },
+          )
         ],
       ),
-      
     );
   }
 } 

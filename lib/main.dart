@@ -5,9 +5,15 @@ import 'package:zoom_clone/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
- runApp(const MyApp());
- }
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyAevt9PwmraB3BkDD2LLqlCD9eWBnRle2s", 
+      appId: "1:191983046444:ios:a42a1723c59a5baacae689", 
+      messagingSenderId: "191983046444",
+      projectId:" zoom-clone-bfab5")
+  ); 
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
